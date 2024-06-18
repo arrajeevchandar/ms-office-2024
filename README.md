@@ -1,3 +1,4 @@
+
 ## Follow these instructions
 
 First run the Office deployment tool and extract the files onto a folder.
@@ -8,6 +9,20 @@ Rename the first file to
 configuration.xml
 ```
 
+Delete all the text in the first file and paste the following text
+
+```bash
+<Configuration>
+  <Add OfficeClientEdition="64"  Channel="PerpetualVL2024">
+     <Product ID="ProPlus2024Volume" PIDKEY="#####-#####-#####-#####-#####" >
+         <Language ID="en-us" />
+    </Product>
+  </Add>
+  <RemoveMSI />
+  <Property Name="AUTOACTIVATE" Value="1" />
+</Configuration>
+```
+
 And delete the remaining files except the setup.exe file
 
 Now open this folder in CMD
@@ -16,7 +31,7 @@ Now open this folder in CMD
 setup /configure configuration.xml
 ```
 
-Wait for a few minutes as the files are being downloaded, then run this command again
+Wait for a few minutes as the files are being downloaded, then run the following command
 
 ```bash
 setup /download configuration.xml
